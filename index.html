@@ -4,67 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfume Zone Chittagong</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Smooth Page Transition -->
+    <div class="page-transition"></div>
+
     <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="#wishlist">Wishlist</a></li>
-            <li><a href="#cart">Shopping Cart</a></li>
-        </ul>
+    <nav class="navbar">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact Us</a>
+        <div class="cart-icon">🛒</div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="home">
+    <!-- Background Video -->
+    <section id="home">
+        <video id="background-video" autoplay loop muted>
+            <source src="background.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
-            <h1>Welcome to Perfume Zone Chittagong</h1>
-            <p>Explore the finest fragrances that tell your story.</p>
-            <a href="#shop" class="btn">Shop Now</a>
-        </div>
-    </header>
-
-    <!-- Product Categories Section -->
-    <section id="shop">
-        <h2>Shop By Category</h2>
-        <div class="product-categories">
-            <div class="category">Cent</div>
-            <div class="category">Spray</div>
-            <div class="category">Oil</div>
+            <h1>Experience Luxury in Every Drop</h1>
+            <p>Exclusive perfumes curated for your unique style.</p>
+            <button class="shop-now">Shop Now</button>
         </div>
     </section>
-<!-- Wishlist Button -->
-<button id="add-to-wishlist">Add to Wishlist</button>
 
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Our Collection</h2>
+        <div class="product-grid">
+            <div class="product-3d" data-name="Cent">
+                <img src="cent.jpg" alt="Cent Perfume">
+                <h3>Cent Perfume</h3>
+            </div>
+            <div class="product-3d" data-name="Spray">
+                <img src="spray.jpg" alt="Spray Perfume">
+                <h3>Spray Perfume</h3>
+            </div>
+            <div class="product-3d" data-name="Oil">
+                <img src="oil.jpg" alt="Essential Oil">
+                <h3>Essential Oil</h3>
+            </div>
+        </div>
+    </section>
 
-    <!-- About Us Section -->
-    <section id="about">
+    <!-- About Us -->
+    <section id="about" class="parallax" data-speed="0.3">
         <h2>About Us</h2>
-        <p>At Perfume Zone Chittagong, we believe that fragrance is more than just a scent—it’s an experience, a statement, and a reflection of your personality. Our mission is to bring you the finest collection of premium perfumes, sprays, and essential oils, carefully curated to suit every mood and occasion.
-Located in the heart of Chittagong, we take pride in offering authentic, high-quality fragrances that leave a lasting impression. Whether you prefer the elegance of classic scents, the boldness of modern sprays, or the richness of essential oils, we have something for every fragrance lover.
-With a commitment to excellence, customer satisfaction is our top priority. We ensure that every purchase is seamless with our cash-on-delivery option, user-friendly shopping experience, and dedicated customer support.
-
-Step into the world of Perfume Zone Chittagong—where every drop tells a story.</p>
+        <p>At Perfume Zone Chittagong, we believe that fragrance is more than just a scent—it’s an experience...</p>
     </section>
 
-    <!-- Contact Us Section -->
+    <!-- Customer Reviews -->
+    <section id="reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="review-slider">
+            <div class="review">“Absolutely love the quality!” - Aisha</div>
+            <div class="review">“Best perfume store in Chittagong!” - Rahim</div>
+            <div class="review">“Highly recommended.” - Sara</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Name: M Hasnat</p>
-        <p>Address: 2nd Floor, Safa Amin, Parade Corner, Chawkbazar, Chittagong</p>
+        <p>Address: 2nd floor, Safa Amin, Parade Corner, Chawkbazar, Chittagong</p>
         <p>Contact Number: +880 1835-199322</p>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Perfume Zone Chittagong. All rights reserved.</p>
-    </footer>
-
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
