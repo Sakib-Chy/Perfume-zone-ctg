@@ -118,3 +118,41 @@ document.addEventListener("DOMContentLoaded", function () {
     lazyImages.forEach(lazyLoad);
 });
             
+document.addEventListener("DOMContentLoaded", function () {
+    // Smooth Page Transitions
+    const transitionElement = document.querySelector(".page-transition");
+    setTimeout(() => {
+        transitionElement.classList.add("fade-out");
+    }, 500);
+
+    // Parallax Scrolling Effect
+    window.addEventListener("scroll", function () {
+        let scrolled = window.scrollY;
+        document.querySelectorAll(".parallax").forEach(element => {
+            let speed = element.getAttribute("data-speed");
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
+
+    // 3D Product Showcase - Rotate on Mouse Move
+    const products = document.querySelectorAll(".product-3d");
+    products.forEach(product => {
+        product.addEventListener("mousemove", (e) => {
+            let rect = product.getBoundingClientRect();
+            let x = (e.clientX - rect.left) / rect.width - 0.5;
+            let y = (e.clientY - rect.top) / rect.height - 0.5;
+            product.style.transform = `rotateY(${x * 30}deg) rotateX(${y * -30}deg)`;
+        });
+        product.addEventListener("mouseleave", () => {
+            product.style.transform = "rotateY(0deg) rotateX(0deg)";
+        });
+    });
+
+    // Background Video Auto-Play & Fade-in Effect
+    const video = document.getElementById("background-video");
+    if (video) {
+        video.addEventListener("loadeddata", () => {
+            video.classList.add("fade-in");
+        });
+    }
+});
