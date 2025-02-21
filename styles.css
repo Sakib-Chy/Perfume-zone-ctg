@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1d1d1d;
+    color: #fff;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero-content {
+    text-align: center;
+    padding: 50px;
+    background-color: #000;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+
+.btn {
+    background-color: #f8a500;
+    color: #fff;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+#shop {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.product-categories {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.category {
+    background-color: #333;
+    padding: 30px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    width: 30%;
+}
+
+section {
+    margin: 50px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-categories {
+        flex-direction: column;
+    }
+}
