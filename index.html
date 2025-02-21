@@ -1,63 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfume Zone Chittagong</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfume Zone Chittagong</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #111;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+    .navbar a:hover {
+      color: #ccc;
+    }
+    .hero {
+      height: 100vh;
+      background: url('perfume-bg.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    .hero button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .hero button:hover {
+      background-color: #555;
+    }
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .footer {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+    }
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+.shop-categories {
+  margin-bottom: 20px;
+}
+.category-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.category-btn.active {
+  background-color: #555;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.product-card {
+  background-color: #222;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+.product-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+}
+.product-card p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+.product-card button {
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.product-card button:hover {
+  background-color: #666;
+}
+.reviews-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+}
+.review {
+  min-width: 300px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+  </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="#wishlist">Wishlist</a></li>
-            <li><a href="#cart">Shopping Cart</a></li>
-        </ul>
-    </nav>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#">Perfume Zone</a>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#">Cart (0)</a>
+      <a href="#">Login</a>
+    </div>
+  </div>
 
-    <!-- Hero Section -->
-    <header id="home">
-        <div class="hero-content">
-            <h1>Welcome to Perfume Zone Chittagong</h1>
-            <p>Explore the finest fragrances that tell your story.</p>
-            <a href="#shop" class="btn">Shop Now</a>
-        </div>
-    </header>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div>
+      <h1>Step into the world of Perfume Zone Chittagong</h1>
+      <button>Shop Now</button>
+    </div>
+  </div>
+<!-- Shop Section -->
+<div id="shop" class="section">
+  <h2>Shop</h2>
+  <div class="shop-categories">
+    <button class="category-btn active" data-category="all">All</button>
+    <button class="category-btn" data-category="cent">Cent</button>
+    <button class="category-btn" data-category="spray">Spray</button>
+    <button class="category-btn" data-category="oil">Oil</button>
+  </div>
+  <div class="product-grid">
+    <!-- Product Cards will be dynamically added here -->
+  </div>
+</div>
+  <!-- About Us Section -->
+  <div id="about" class="section">
+    <h2>About Us</h2>
+    <p>At Perfume Zone Chittagong, we believe that fragrance is more than just a scent—it’s an experience, a statement, and a reflection of your personality. Our mission is to bring you the finest collection of premium perfumes, sprays, and essential oils, carefully curated to suit every mood and occasion.</p>
+  </div>
 
-    <!-- Product Categories Section -->
-    <section id="shop">
-        <h2>Shop By Category</h2>
-        <div class="product-categories">
-            <div class="category">Cent</div>
-            <div class="category">Spray</div>
-            <div class="category">Oil</div>
-        </div>
-    </section>
+  <!-- Contact Section -->
+  <div id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Name: M Hasnat</p>
+    <p>Address: 2nd floor Safa Amin, Parade Corner, Chawkbazar, Chittagong</p>
+    <p>Contact: +880 1835-199322</p>
+  </div>
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+  </div>
+</div>
 
-    <!-- About Us Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>At Perfume Zone Chittagong, we believe fragrance is more than just a scent—it’s an experience, a statement, and a reflection of your personality...</p>
-    </section>
+<!-- Signup Modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Sign Up</h2>
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPassword" placeholder="Password">
+    <button onclick="signup()">Sign Up</button>
+    <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+  </div>
+</div>
 
-    <!-- Contact Us Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Name: M Hasnat</p>
-        <p>Address: 2nd Floor, Safa Amin, Parade Corner, Chawkbazar, Chittagong</p>
-        <p>Contact Number: +880 1835-199322</p>
-    </section>
+    <div class="reviews-section">
+  <h2>Customer Reviews</h2>
+  <div class="reviews-carousel">
+    <div class="review">"Great products and fast delivery!" - John Doe</div>
+    <div class="review">"Amazing fragrances!" - Jane Smith</div>
+    <!-- Add more reviews -->
+  </div>
+    </div>
+  <!-- Footer -->
+  <div class="footer">
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+    <p>&copy; 2023 Perfume Zone Chittagong. All rights reserved.</p>
+  </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Perfume Zone Chittagong. All rights reserved.</p>
-    </footer>
+  <script>
+    // Smooth scrolling for contact link
+    document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+    });
+const products = [
+  { id: 1, name: "Cent 1", price: "৳1200", category: "cent", image: "cent1.jpg" },
+  { id: 2, name: "Spray 1", price: "৳1500", category: "spray", image: "spray1.jpg" },
+  { id: 3, name: "Oil 1", price: "৳800", category: "oil", image: "oil1.jpg" },
+  // Add more products here
+];
 
-    <script src="scripts.js"></script>
+const productGrid = document.querySelector('.product-grid');
+const categoryButtons = document.querySelectorAll('.category-btn');
+
+// Display all products by default
+displayProducts(products);
+
+// Filter products by category
+categoryButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const category = button.getAttribute('data-category');
+    categoryButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const filteredProducts = category === 'all' ? products : products.filter(product => product.category === category);
+    displayProducts(filteredProducts);
+  });
+});
+
+// Function to display products
+function displayProducts(products) {
+  productGrid.innerHTML = products.map(product => `
+    <div class="product-card">
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>${product.price}</p>
+      <button onclick="addToCart(${product.id})">Add to Cart</button>
+    </div>
+  `).join('');
+}
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+firebase.initializeApp(firebaseConfig);
+
+// Login function
+function login() {
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => alert('Logged in successfully!'))
+    .catch(error => alert(error.message));
+}
+
+// Signup function
+function signup() {
+  const email = document.getElementById('signupEmail').value;
+  const password = document.getElementById('signupPassword').value;
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(() => alert('Account created successfully!'))
+    .catch(error => alert(error.message));
+}
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(productId) {
+  const product = products.find(p => p.id === productId);
+  cart.push(product);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`${product.name} added to cart!`);
+}
+
+function viewCart() {
+  console.log(cart); // Display cart items in a modal or separate page
+}
+
+let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+function addToWishlist(productId) {
+  const product = products.find(p => p.id === productId);
+  wishlist.push(product);
+  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  alert(`${product.name} added to wishlist!`);
+          }
+  </script>
 </body>
-</html>
+    </html>
